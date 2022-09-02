@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sas</title>
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+<body>
+
+   <!-- container -->
+   <div class="container">
+         <!-- header -->
+        <header class="flex align-items-center space-between ">
+            <a href="#">
+                <img class="siteLogo" src="./scss/assets/icons/logo.png" alt="sss">
+            </a>
+
+            <!-- search input -->
+            <div action="" class="searchLabel flex">
+                <input id="searchInput" type="text" placeholder="Ցանկանում եմ գնել...">
+                <button class="searchBtn">
+                    <i class="icon-search"></i>
+                </button>
+            </div>
+
+            <!-- shoppingIcons -->
+            <ul class="shoppingIcons flex">
+                <li>
+                    <button class="favorite flex" data-count="0">
+                        <i class="icon-favorite"></i>
+                        <span>Նախընտրածներ</span>
+                    </button>
+                   
+                </li>
+                <li>
+                    <button class="basket flex" data-count="0">
+                        <i class="icon-add"></i>
+                        <span>Զամբյուղ</span>
+                    </button>
+                </li>
+            </ul>   
+        </header>
+
+        <main>
+            <!-- cards section -->
+             <section id="cardSection" class="flex align-items-center">
+            </section>
+
+            <!-- rigth aside -->
+            <aside class="rigth-aside">
+                <div class="basket-content">
+                    <ul class="basket-list">
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- js -->
+    <script type="module" src="index.js"></script>
+</body>
+</html>

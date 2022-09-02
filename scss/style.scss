@@ -1,0 +1,264 @@
+
+@import "assets/icons/index";
+@import "utilities/index";
+@import "base/index";
+
+// Header
+header {
+    box-shadow: 0 4px 4px rgba(57, 61, 68, 0.08);
+    padding: 15px 30px;
+    position: relative;
+}
+
+// SiteLogo
+.siteLogo {
+    width: 140px;
+}
+
+// searchLabel
+.searchLabel {
+    position: relative;
+    width: 60%;
+}
+
+// SearchInput
+#searchInput {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #d6d6d7;
+    background-color: #f3f3f3;
+    padding: 0 15px;
+
+    &:hover {
+        background-color: #ebebeb;
+        border-color: #27c;
+    }
+}
+
+.searchBtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    border: none;
+}
+
+.icon-search {
+    font-size: 20px;
+    color: #27c;
+    cursor: pointer;
+}
+
+// Shopping
+.shoppingIcons {
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 15px;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &:hover {
+            color: #27c;
+            cursor: pointer;
+        }
+
+        .favorite {
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: attr(data-count);  
+                width: 20px;
+                height: 20px;
+                right: 35px;
+                font-size: 15px;
+                text-align: center;
+                color: #f3f3f3;
+                background-color: red;
+                border-radius: 50%;
+                // display: none;
+            }
+
+            &:hover {
+                color: #27c;
+                cursor: pointer;
+            }
+        }
+
+        .basket {
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: attr(data-count);
+                    width: 20px;
+                    height: 20px;
+                    right: 10px;
+                    font-size: 15px;
+                    text-align: center;
+                    color: #f3f3f3;
+                    background-color: red;
+                    border-radius: 50%
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: #27c;
+                }
+        }
+
+        & i {
+            margin-bottom: 10px;
+            color: #27c;
+            font-size: 30px;
+        }
+    }
+}
+
+// CardSection
+#cardSection {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 25px;
+
+    .card {
+        padding: 20px;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        max-width: 260px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: border,box-shadow 0.3s linear;
+
+
+        .imgContent {
+            height: 220px;
+            position: relative;
+
+            .favoriteBtn {
+                position: absolute;
+                top: 0;
+                right: 5px;
+                border: none;
+                background-color: transparent;
+                display: none;
+                color: #f3f3f3;
+                font-size: 25px;
+                cursor: pointer;
+
+                &.active {
+                    color: red;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+
+                &:hover {
+                    color: blue;
+                }
+
+                .icon-favorite {
+                    color: currentColor;
+                }   
+            }
+        }
+
+        &:hover .favoriteBtn {
+            display: block;
+        }
+
+        &:hover {
+          border-color: #27c;
+          cursor: pointer;
+          border-width: 1px;
+          box-shadow: 2px 2px 8px gray, -2px -2px 8px gray;;
+
+          &::after {
+            position: absolute;
+            
+          }
+        }
+
+        & img {
+            width: 100%;
+            display: block;
+            transition: transform  0.3s linear;
+
+
+            &:hover {
+                transform: scale(1.1);
+
+            }
+        }
+    }
+
+    .cardContent {
+        .productPrice {
+            display: inline-block;
+        }
+    }
+
+    .cardContentBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .basketAddBtn {
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            color: #f3f3f3;
+            border: none;
+            background-color: #27c; 
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+
+.rigth-aside {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 100px;
+    z-index: 1;
+
+    &.open {
+        display: flex;
+    }
+}
+
+.basket-content {
+    width: calc(100% - 60%);
+    min-height: 100vh;
+    background-color: rgb(171, 222, 246);
+    border-radius: 50px 0 0 50px;    
+}
+
+.basket-content {
+    padding: 20px;
+
+    .cardImg {
+        border-radius: 15px;
+    }
+}
